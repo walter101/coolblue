@@ -3,8 +3,36 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel='stylesheet' type='text/css' href='bundles/app/css/layout.css' />
+        
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    
+<script>
+
+var huidige='set1';
+function showitems_menu(e){
+
+// hide all	
+var a= Array('set1', 'set2', 'set3', 'set4', 'set5', 'set6', 'set7', 'set8', 'set9', 'set10', 'set11', 'set12', 'set13');
+a.forEach( function(x){ document.getElementById(x).style.display='none';});
+
+	// display new one
+	var huidige = e.getAttribute("name");
+	document.getElementById(huidige).style.display='block';
+console.log("een");
+}
+
+
+function hideitems_bigmenu(e){
+	var a = e.getAttribute("id");
+	console.log(a);
+	console.log("mouseout");
+	document.getElementById(a).style.display='none';
+}
+
+</script>
     </head>
     <body>
         {% block body %}{% endblock %}

@@ -1,46 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Coolblue Website test</h1>
-            </div>
-
-            <div>
-                <img src="images/gallery-thumbnails.jpg" alt="111" />
-            </div>
-            
-            <div>
-                <img src="{{ asset('images/gallery-thumbnails.jpg') }}" alt="222" /><br>
-                <img src="{{ asset('images/vis.jpg') }}" alt="222" /><br>
-
-            </div>
-
-        </div>
-    </div>
-{% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% block stylesheets %}
+    
+    <link rel='stylesheet' type='text/css' href='bundles/app/css/layout.css' />
+
 <style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+    body { background: #ffffff; font: 18px/1.5 sans-serif; }
     h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
     h1 { font-size: 36px; }
     h2 { font-size: 21px; margin-bottom: 1em; }
@@ -66,3 +31,95 @@
     }
 </style>
 {% endblock %}
+
+
+
+{% block body %}
+               
+<div class='topbanner'>
+	<div class='topbannerinner'>
+    	<form action='#' method='post'>
+        	<input type='text' name='search' class='searchfield' />
+            <input type='submit' name='submit' value='go' class='seachbutton'/>
+        </form>
+        
+        <a href='#'><img src='bundles/app/images/winkelwagenicon.jpg' alt='' border='0' class='iconwinkelwagen'/></a>
+    </div>
+</div>
+
+
+<div class='container'>
+
+<div class='menulinks'>
+        {{ render(controller('AppBundle:LeftMenu:LeftMenu', {'myvar': 'een prachtige tekst'})) }}
+        
+</div>
+
+
+<div class='inforechts' >
+        {{ render(controller('AppBundle:Menu:showmenu', {'myvar': 'een prachtige tekst'})) }}
+
+        
+</div>
+
+
+
+</div>
+<div class='clearingrow'>&nbsp;</div>
+
+<!-- aanbiedingen -->
+    <div class='aanbiedingrow'>
+        
+    <div class='aanbiedingblok'>
+        <img src='bundles/app/images/samsungtv.jpg' border='0' alt='tv' /><br />
+        <div class='productname'>Samsung UE32J5200</div>
+        <img src='bundles/app/images/sterren.jpg' border='0' alt='tv' /><br />
+        <a href='#' class='viewallproducts'><b>></b>Bekijk alle televisies</a><br />
+    </div>
+        
+        <div class='aanbiedingblok'>
+        <img src='bundles/app/images/sonosplay.jpg' border='0' alt='tv' /><br />
+        <div class='productname'>Sonos play</div>
+        <img src='bundles/app/images/sterren.jpg' border='0' alt='tv' /><br />
+        <a href='#' class='viewallproducts'><b>></b>Bekijk alle televisies</a><br />
+        </div>
+
+        <div class='aanbiedingblok'>
+        <img src='bundles/app/images/samsungssd.jpg' border='0' alt='tv' /><br />
+        <div class='productname'>Samsung ssd</div>
+        <img src='bundles/app/images/sterren.jpg' border='0' alt='tv' /><br />
+        <a href='#' class='viewallproducts'><b>></b>Bekijk alle televisies</a><br />
+        </div>
+
+        <div class='aanbiedingblok'>
+            <a href='#'><img src='bundles/app/images/vaatwasser.jpg' border='0' alt='tv' /></a><br />
+        <div><a href='#' class='productname'>Samsung UE32J5200</a></div>
+        <img src='bundles/app/images/sterren.jpg' border='0' alt='tv' /><br />
+        <a href='#' class='viewallproducts'><b> ></b> Bekijk alle televisies</a><br />
+        </div>
+
+    </div>
+<div class='clearingrow'>&nbsp;</div>
+
+
+<div class='footer'>footer</div>
+                
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
